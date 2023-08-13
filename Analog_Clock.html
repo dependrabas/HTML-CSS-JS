@@ -1,0 +1,34 @@
+<!-- Created by Sarthak -->
+<!-- Modified by Mouhammad Zein Eddine -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="author" content"Dependra">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Analog Clock</title>
+  <link rel="stylesheet" href="Analog_Clock.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body>
+  <div class="clock">
+    <div id="caption">Analog Clock</div>
+    <div class="numbers">
+        <div id="minutes"></div>
+        <div id="hands">
+            <div class="circle" id="hr"><i></i></div>
+            <div class="circle" id="mn"><i></i></div>
+            <div class="circle" id="sc"><i></i></div>
+        </div>
+    </div>
+  </div>
+  <audio class="audio" id="a" autoplay>
+    <source src="https://dl.dropboxusercontent.com/scl/fi/usgr4wuq6wnatm3lo96k3/Carol-of-the-Bells-Christmas-Piano-Cover.mp3?rlkey=1eklil7gl7rgq4konsbvndldz&dl=0">
+  </audio>
+  <script src="Analog_Clock.js">
+  </script>
+</body>
+</html>

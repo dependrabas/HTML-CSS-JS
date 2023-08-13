@@ -1,0 +1,183 @@
+/* Created by Sarthak */
+
+* {
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  body {
+    display: flex;
+    /* Added */
+    flex-direction: column;
+    /* */
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    /* modified for design purposes */
+    background: linear-gradient(45deg,#f9f9f9 40%,white 75%),linear-gradient(-90deg,red,orange);
+    background-size: 10px 10px;
+    /* */
+  }
+  
+  /* Added to handle caption style */
+  #caption {
+      text-align: center;
+      color: rgba(255,255,255,0.25);
+      background-color: #162e4f;
+      padding: 5px 5px;
+      font-size: 0.75em;
+      position: absolute;
+      top: 75px;
+      z-index: 9;
+      opacity: 1;
+      animation: blink 5s ease-in-out alternate infinite;
+  }
+  
+  .clock {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    background: linear-gradient(145deg, #162e4f, #132743);
+    /* modified for design purposes */
+    box-shadow: 0px 0px 20px #12253f,
+    0px 0px 50px #183155;
+    /* */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+  /*  box-shadow: 30px 30px 30px -10px rgba(0, 0, 0, 0.15),
+    inset 50px 50px 10px rgba(255, 255, 255, 0.75),
+    -15px -15px 35px rgba(255, 255, 255, 0.55),
+    inset -1px -1px 10px rgba(0, 0, 0, 0.2);*/
+  }
+  .clock:before {
+    content: '';
+    height: 4px;
+    width: 4px;
+    border-radius: 50%;
+    position: absolute;
+    background: #e91e63;
+    z-index: 1000;
+    /*box-shadow: 0 0 0 1px #e91e63,
+    0 0 0 3px #fff,
+    0 0 5px 5px rgba(0, 0, 0, 0.15);*/
+  }
+  .clock .numbers {
+    position: absolute;
+    inset: 5px;
+    background: #152b4a;
+    background-color: #e9e9e9;
+    border-radius: 50%;
+  }
+  
+  /* Added to add ticks design */
+  #minutes {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      left: 0px;
+  }
+  #minutes span {
+    position: absolute;
+    inset: 5px;
+    text-align: center;
+    color: #888;
+    font-size: 0.25em;
+    transform: rotate(calc(6deg * var(--i)));
+  }
+  #minutes span b {
+    display: inline-block;
+    font-size: 150;
+      transform: rotate(calc(-6deg * var(--i)));
+      height: 10%;
+    width: 1px;
+    position: absolute;
+    background: #888;
+    transform-origin: top;
+    transform: scaleY(0.1);
+  }
+  
+  #minutes span:nth-child(5n+1) b {
+      transform: scaleY(0.3);
+  }
+  /* */
+  
+  .clock .numbers > span:nth-child(n+14) {
+      
+  }
+  .clock .numbers > span {
+    position: absolute;
+    inset: 20px;
+    text-align: center;
+    color: #888;
+    font-size: 0.8em;
+    /* Modified to support 12 labels instead of 4 */
+    transform: rotate(calc(30deg * var(--i)));
+    /* */
+  }
+  
+  .clock .numbers > span b {
+    display: inline-block;
+    /* modified to decrease font and support 12 labels instead of 4 */
+    font-size: 200;
+      transform: rotate(calc(-30deg * var(--i)));
+    /* */
+  }
+  
+  .clock .numbers .circle {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+  }
+  .clock .numbers .circle i {
+    height: 50%;
+    width: 3px;
+    position: absolute;
+    /* modified for design purposes */
+    background: #666;
+    /* */
+    transform-origin: bottom;
+    transform: scaleY(0.55);
+    /* added for some transition effect*/
+    transition: all 1s ease-in-out;
+    /* */
+  }
+  .clock .numbers .circle#hr i {
+    transform: scaleY(0.3);
+    background-color: #999;
+  }
+  .clock .numbers .circle#mn i {
+    transform: scaleY(0.45);
+  }
+  .clock .numbers .circle#sc i {
+    /* modified to increase seconds hand length */
+    transform: scaleY(0.65);
+    background: #e91e63;
+    box-shadow: 0 30px 0 #e91e63;
+  }
+  
+  .numbers:after {
+      content: "";
+      position: absolute;
+      inset: 0px 0px 0px 0px;
+      margin: auto;
+      width: 10px;
+      height: 10px;
+      background-color: orangered;
+      z-index: 2000;
+      border-radius: 50%;
+  }
+  /* Added to provide caption blink animation */
+  @keyframes blink{
+      from {
+          color: rgba(255,255,255,0.25);
+      }
+      
+      to {
+          color: rgba(165,165,0,0.9);
+      }
+  }
