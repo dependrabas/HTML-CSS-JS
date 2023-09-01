@@ -1,0 +1,4 @@
+The URL in the video no longer works, please use this new one instead:
+
+https://www.ncei.noaa.gov/access/monitoring/climate-at-a-glance/global/time-series/globe/land_ocean/1/10/1880-2022.json
+
