@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("li").each(function(){
+      alert($(this).text())
+    });
+  });
+});
+</script>
+</head>
+<body>
+
+<button>Following will be </button>
+
+<ul>
+  <li>Hii</li>
+  <li>How are you</li>
+  <li>Can you tell me something which i dont know.</li>
+</ul>
+
+</body>
+</html>
